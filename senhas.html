@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas - Segurança Simples</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html"><span>SS</span> Segurança Simples</a>
+    <nav>
+      <a href="index.html" >Home</a>
+      <a href="senhas.html" class="ativo">Gerador de Senhas</a>
+      <a href="cursos.html" >Cursos</a>
+      <a href="quizzes.html" >Quizzes</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>🔑 Gerador de Senhas</h1>
+    <p>Crie uma senha forte 🤍</p>
+  </section>
+
+  <main>
+    <div class="caixa">
+      <div class="tamanho">
+        <label for="tamanho">Tamanho:</label>
+        <input type="range" id="tamanho" min="8" max="30" value="12" oninput="mostrarTamanho()">
+        <span id="valorTamanho">12</span>
+      </div>
+
+      <button onclick="gerarSenha()">Gere sua senha</button>
+
+      <div id="senha">Sua senha aparecerá aqui</div>
+
+      <div class="barra"><div id="forca"></div></div>
+      <p>Força da senha: <span id="textoForca">-</span></p>
+
+      <button class="claro" onclick="copiarSenha()">Copiar senha</button>
+    </div>
+
+    <div class="caixa">
+      <h3>Do que a senha é composta?</h3>
+      <div class="chips" id="composicao">
+        <div class="chip"><strong>-</strong>Minúsculas</div>
+        <div class="chip"><strong>-</strong>Maiúsculas</div>
+        <div class="chip"><strong>-</strong>Números</div>
+        <div class="chip"><strong>-</strong>Símbolos</div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Desenvolvido por Sabrina Gabriele dos Santos.</p>
+  </footer>
+  <script src="senhas.js"></script>
+</body>
+</html>

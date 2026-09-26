@@ -1,0 +1,669 @@
+/* Segurança Simples - estilos (paleta lilás) */
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Sora:wght@600;700;800&display=swap");
+
+:root {
+  --roxo-escuro: #33235c;
+  --roxo: #6d4fc2;
+  --lilas: #a78bfa;
+  --lilas-claro: #e4daff;
+  --fundo: #f6f2ff;
+  --branco: #ffffff;
+  --texto: #2a2140;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", Arial, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: "Sora", Arial, sans-serif;
+}
+
+/* ---------- Menu ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: var(--roxo-escuro);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(51, 35, 92, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: "Sora", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logo span {
+  background: linear-gradient(135deg, var(--lilas), var(--roxo));
+  padding: 6px 10px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--lilas-claro);
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background-color: rgba(167, 139, 250, 0.3);
+  color: white;
+}
+
+nav a.ativo {
+  background-color: var(--lilas);
+  color: var(--roxo-escuro);
+}
+
+/* ---------- Home: hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo) 65%, var(--lilas));
+  color: white;
+  padding: 70px 20px 90px;
+  text-align: center;
+}
+
+/* bolinhas decorativas */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.hero::before {
+  width: 350px;
+  height: 350px;
+  top: -120px;
+  left: -100px;
+}
+
+.hero::after {
+  width: 260px;
+  height: 260px;
+  bottom: -100px;
+  right: -60px;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* escudo com as letras SS */
+.escudo {
+  width: 190px;
+  height: 220px;
+  margin: 0 auto 20px;
+  background: linear-gradient(160deg, #ffffff, var(--lilas-claro) 60%, var(--lilas));
+  clip-path: polygon(50% 0, 100% 14%, 100% 55%, 50% 100%, 0 55%, 0 14%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 25px;
+  animation: flutuar 3s ease-in-out infinite;
+}
+
+.escudo span {
+  font-family: "Sora", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 78px;
+  letter-spacing: -4px;
+  color: var(--roxo);
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.hero h1 {
+  font-size: 44px;
+  margin: 0 0 10px;
+}
+
+.hero p {
+  font-size: 19px;
+  max-width: 520px;
+  margin: 0 auto 30px;
+  color: var(--lilas-claro);
+}
+
+.botao {
+  display: inline-block;
+  background-color: white;
+  color: var(--roxo);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  transform: scale(1.06);
+  background-color: var(--lilas-claro);
+}
+
+/* ---------- Conteúdo geral ---------- */
+main {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+main h2,
+.pilares h2,
+.avaliacao h2 {
+  color: var(--roxo-escuro);
+  text-align: center;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+/* faixa de título das páginas internas */
+.banner {
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  color: white;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.banner h1 {
+  margin: 0 0 8px;
+  font-size: 36px;
+}
+
+.banner p {
+  margin: 0;
+  color: var(--lilas-claro);
+}
+
+/* ---------- Cartões da home ---------- */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.cartao {
+  display: block;
+  background-color: var(--branco);
+  border-radius: 20px;
+  padding: 30px 25px;
+  text-decoration: none;
+  color: var(--texto);
+  text-align: center;
+  border-bottom: 6px solid var(--lilas);
+  box-shadow: 0 8px 25px rgba(109, 79, 194, 0.12);
+  transition: 0.25s;
+}
+
+.cartao:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 35px rgba(109, 79, 194, 0.25);
+  border-bottom-color: var(--roxo);
+}
+
+.icone {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--lilas-claro), var(--lilas));
+  font-size: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartao h3 {
+  margin: 0 0 8px;
+  color: var(--roxo);
+}
+
+.cartao p {
+  margin: 0;
+}
+
+/* ---------- Pilares (home) ---------- */
+.pilares {
+  background-color: var(--lilas-claro);
+  padding: 50px 20px;
+}
+
+.pilares .lista {
+  max-width: 950px;
+  margin: 25px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.pilar {
+  background-color: var(--roxo-escuro);
+  color: white;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.pilar h3 {
+  margin: 0 0 8px;
+  color: var(--lilas);
+}
+
+.pilar p {
+  margin: 0;
+}
+
+/* ---------- Avaliação (home) ---------- */
+.avaliacao {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.avaliacao p {
+  margin: 0 0 25px;
+}
+
+.botao-roxo {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--lilas), var(--roxo));
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 30px;
+  transition: 0.2s;
+}
+
+.botao-roxo:hover {
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(109, 79, 194, 0.4);
+}
+
+/* ---------- Caixas e botões ---------- */
+.caixa {
+  background-color: var(--branco);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 25px rgba(109, 79, 194, 0.12);
+}
+
+button {
+  background: linear-gradient(135deg, var(--lilas), var(--roxo));
+  color: white;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 30px;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(109, 79, 194, 0.4);
+}
+
+button.claro {
+  background: var(--lilas-claro);
+  color: var(--roxo);
+}
+
+/* ---------- Gerador de senhas ---------- */
+.tamanho {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.tamanho input {
+  flex: 1;
+  accent-color: var(--roxo);
+}
+
+#valorTamanho {
+  background-color: var(--lilas-claro);
+  color: var(--roxo);
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+#senha {
+  font-family: "Courier New", monospace;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--roxo-escuro);
+  background-color: var(--fundo);
+  border: 2px dashed var(--lilas);
+  padding: 22px;
+  border-radius: 14px;
+  margin: 20px 0;
+  word-break: break-all;
+}
+
+.barra {
+  height: 12px;
+  background-color: var(--lilas-claro);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#forca {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--lilas), var(--roxo));
+  border-radius: 10px;
+  transition: width 0.4s;
+}
+
+#textoForca {
+  font-weight: 700;
+  color: var(--roxo);
+}
+
+.chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.chip {
+  background-color: var(--fundo);
+  border-radius: 14px;
+  padding: 15px;
+  text-align: center;
+  border-top: 4px solid var(--lilas);
+}
+
+.chip strong {
+  display: block;
+  font-family: "Sora", Arial, sans-serif;
+  font-size: 32px;
+  color: var(--roxo);
+}
+
+/* ---------- Cursos ---------- */
+.cursos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+}
+
+.curso {
+  background-color: var(--branco);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(109, 79, 194, 0.12);
+  transition: 0.25s;
+}
+
+.curso:hover {
+  transform: translateY(-8px);
+}
+
+/* "capa" do vídeo */
+.capa {
+  height: 150px;
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: var(--lilas);
+  color: white;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5px;
+}
+
+.curso .texto {
+  padding: 20px;
+}
+
+.curso h3 {
+  margin: 0 0 15px;
+  color: var(--roxo-escuro);
+  font-size: 18px;
+}
+
+.curso a {
+  display: inline-block;
+  background: var(--lilas-claro);
+  color: var(--roxo);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.curso a:hover {
+  background-color: var(--lilas);
+  color: white;
+}
+
+/* ---------- Quizzes ---------- */
+.pergunta h3 {
+  margin-top: 0;
+  color: var(--roxo-escuro);
+}
+
+.opcao {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* esconde a bolinha do radio e estiliza o texto como um botão */
+.opcao input {
+  display: none;
+}
+
+.opcao span {
+  display: block;
+  padding: 12px 16px;
+  border: 2px solid var(--lilas-claro);
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.opcao span:hover {
+  border-color: var(--lilas);
+  background-color: var(--fundo);
+}
+
+.opcao input:checked + span {
+  border-color: var(--roxo);
+  background-color: var(--lilas-claro);
+  font-weight: 700;
+}
+
+.opcao.certa span {
+  border-color: #2e9e5b;
+  background-color: #dcf5e6;
+}
+
+.opcao.errada span {
+  border-color: #d64545;
+  background-color: #fde3e3;
+}
+
+.feedback {
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+
+.certo { color: #1e7a3c; }
+.errado { color: #b3261e; }
+
+#resultado {
+  display: none;
+  text-align: center;
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  color: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 25px;
+}
+
+#resultado strong {
+  display: block;
+  font-family: "Sora", Arial, sans-serif;
+  font-size: 48px;
+  color: var(--lilas);
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  background-color: var(--roxo-escuro);
+  color: var(--lilas-claro);
+  text-align: center;
+  padding: 25px;
+  margin-top: auto;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ---------- Celular ---------- */
+.cursos-lista,
+.cartoes,
+.pilares .lista {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+}
+
+@media (max-width: 700px) {
+  header {
+    padding: 10px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .logo {
+    font-size: 17px;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+  }
+  nav a {
+    margin: 0;
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  .hero {
+    padding: 40px 15px 55px;
+  }
+  .escudo {
+    width: 140px;
+    height: 165px;
+    padding-bottom: 18px;
+  }
+  .escudo span {
+    font-size: 56px;
+  }
+  .hero h1 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .banner {
+    padding: 30px 15px;
+  }
+  .banner h1 {
+    font-size: 26px;
+  }
+  main {
+    padding: 25px 15px;
+  }
+  main h2,
+  .pilares h2,
+  .avaliacao h2 {
+    font-size: 22px;
+  }
+  .botao-roxo {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .pilares {
+    padding: 35px 15px;
+  }
+  .caixa {
+    padding: 20px;
+  }
+  .chips {
+    grid-template-columns: 1fr 1fr;
+  }
+  #senha {
+    font-size: 18px;
+    padding: 16px;
+  }
+  .tamanho {
+    flex-wrap: wrap;
+  }
+  .tamanho input {
+    min-width: 140px;
+  }
+  button {
+    width: 100%;
+  }
+  #resultado strong {
+    font-size: 38px;
+  }
+  footer {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+}

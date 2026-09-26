@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes - Segurança Simples</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <a class="logo" href="index.html"><span>SS</span> Segurança Simples</a>
+    <nav>
+      <a href="index.html" >Home</a>
+      <a href="senhas.html" >Gerador de Senhas</a>
+      <a href="cursos.html" >Cursos</a>
+      <a href="quizzes.html" class="ativo">Quizzes</a>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>🧩 Quizzes</h1>
+    <p>Teste suas habilidades em Cibersegurança</p>
+  </section>
+
+  <main>
+    <div id="perguntas"></div>
+
+    <div style="text-align: center;">
+      <button onclick="verResultado()">Ver resultado</button>
+    </div>
+
+    <div id="resultado"></div>
+  </main>
+  <footer>
+    <p>Desenvolvido por Sabrina Gabriele dos Santos.</p>
+  </footer>
+  <script src="quiz.js"></script>
+</body>
+</html>
